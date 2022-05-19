@@ -8,6 +8,7 @@
 #SBATCH -e proj05.err
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=landreja@oregonstate.edu
+
 for t in 1024 4096 16384 65536 262144 1048576 2097152 4194304
 do
         for b in 8 32 128
