@@ -105,13 +105,13 @@ MonteCarlo( IN float *dtxs, IN float *dtys, IN float *dtxvs, IN float *dsvs, IN 
 
 	// randomize everything:
 	float tx   = dtxs[gid];
-	float ty = tdys[gid];
+	float ty = ddys[gid];
     float txv = dtxvs[gid];
     float sv = dsvs[gid];
     float sthd = dsths[gid];
-    float sthr = Radians(dsthd);
-    float svx = sv * cos(dsthr);
-    float svy = sv * sin(dsthr);
+    float sthr = Radians(sthd);
+    float svx = sv * cos(sthr);
+    float svy = sv * sin(sthr);
 
 	// how long until the snowball reaches the y depth:
 	// how long until the snowball reaches the y depth:
@@ -122,7 +122,7 @@ MonteCarlo( IN float *dtxs, IN float *dtys, IN float *dtxvs, IN float *dsvs, IN 
 
 	// how far the snowball has moved in x in that amount of time:
 	float sbx = svx * t;
-	if(fabs(truckx + sbx) < dhalflens)
+	if(fabs(truckx + sbx) < float()dhalflens)
 	{
 		dhits[gid] = 1;
 	}
@@ -237,7 +237,7 @@ main( int argc, char* argv[ ] )
 	// compute the sum :
 
 	int numHits = 0;
-	????
+	numHits = hhits;
 
 	float probability = 100.f * (float)numHits / (float)NUMTRIALS;
 
