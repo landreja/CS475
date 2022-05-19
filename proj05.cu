@@ -238,7 +238,7 @@ main( int argc, char* argv[ ] )
 
 	// compute the sum :
 
-	float numHits = hhits;
+	int* numHits = hhits;
 
 
 	float probability = 100.f * (float)numHits / (float)NUMTRIALS;
