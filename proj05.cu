@@ -112,7 +112,7 @@ MonteCarlo( IN float *dtxs, IN float *dtys, IN float *dtxvs, IN float *dsvs, IN 
     float sthr = Radians(sthd);
     float svx = sv * cos(sthr);
     float svy = sv * sin(sthr);
-	float halftruck = dhalflens;
+	float halftruck = dhalflens[gid];
 
 	// how long until the snowball reaches the y depth:
 	// how long until the snowball reaches the y depth:
@@ -238,8 +238,7 @@ main( int argc, char* argv[ ] )
 
 	// compute the sum :
 
-	float numHits = (int)hhits;
-	
+	float numHits = hhits;
 
 
 	float probability = 100.f * (float)numHits / (float)NUMTRIALS;
