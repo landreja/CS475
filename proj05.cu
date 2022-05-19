@@ -122,8 +122,8 @@ MonteCarlo( IN float *dtxs, IN float *dtys, IN float *dtxvs, IN float *dsvs, IN 
 
 	// how far the snowball has moved in x in that amount of time:
 	float sbx = svx * t;
-	float *yes = fabs(truckx + sbx);
-	if(yes < dhalflens)
+	
+	if(fabs((float)truckx + sbx) < (float)dhalflens)
 	{
 		dhits[gid] = 1;
 	}
@@ -237,8 +237,8 @@ main( int argc, char* argv[ ] )
 
 	// compute the sum :
 
-	int *numHits = 0;
-	numHits = hhits;
+	int numHits = 0;
+	cudaMemcpy( numHits, hhits);
 
 	float probability = 100.f * (float)numHits / (float)NUMTRIALS;
 
