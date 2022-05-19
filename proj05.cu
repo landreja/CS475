@@ -28,7 +28,7 @@
 
 
 // ranges for the random numbers:
-#define PROJECT1
+//#define PROJECT1
 
 #ifdef PROJECT1
 const float TXMIN =	-10.0;	// truck starting location in feet
@@ -138,7 +138,7 @@ main( int argc, char* argv[ ] )
 {
 	TimeOfDaySeed( );
 
-	int dev = findCudaDevice(argc, (const char **)argv);
+	// int dev = findCudaDevice(argc, (const char **)argv);
 
 	
 	float *htxs  = new float [NUMTRIALS];
@@ -238,7 +238,13 @@ main( int argc, char* argv[ ] )
 
 	// compute the sum :
 
-	int* numHits = hhits;
+	int numHits = 0;
+	for (int i = 0; i < NUMTRIALS; i++)
+    {
+        if (hhits[i] == 1){
+			numHits++;
+		}; 
+    };
 
 
 	float probability = 100.f * (float)numHits / (float)NUMTRIALS;
